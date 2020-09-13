@@ -1,5 +1,5 @@
 from canvasapi import Canvas
-from Secrets.py import url,apiKey
+from Secrets import url,apiKey
 
 canvas = Canvas(url,apiKey)
 
