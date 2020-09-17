@@ -1,5 +1,5 @@
 from canvasapi import Canvas
-from Secrets import url,apiKey
+from secrets import url,apiKey
 
 canvas = Canvas(url,apiKey)
 
@@ -7,4 +7,8 @@ usr = canvas.get_current_user()
 
 l = usr.get_courses()
 
-print(l[0].get_assignments()[0])
+for i in range(0,3):
+  print(l[i])
+  for n in l[i].get_assignments():
+    print(n, "\n")
+
