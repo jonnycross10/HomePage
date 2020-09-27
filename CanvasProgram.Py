@@ -10,7 +10,7 @@ l = usr.get_courses()
 
 #I put the courses and assignments into a dictionary
 d = {}
-for i in range(0,3):
+for i in range(0,4):
   d[l[i].name] = []
   for n in l[i].get_assignments():
     d[l[i].name].append(n.name)
