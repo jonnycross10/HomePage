@@ -15,6 +15,7 @@ for i in range(0,4):
   for n in l[i].get_assignments():
     d[l[i].name].append(n.name)
 
-#Then put the dictionary into a json file
-with open('assignments.json', 'w') as fp:
-    json.dump(d, fp)
+#write javascript statements to fle, so html can pick it back up
+#this is an example of what I could display on the html page
+f = open('script.js', 'w')
+f.write("var data = " +str(d)+ "\ndocument.getElementById('tst').innerText = data['CSC130 Data Structure+Algorithm Analy - SECTION 03, 04'];")
