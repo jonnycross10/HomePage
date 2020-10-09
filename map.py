@@ -13,5 +13,7 @@ todaysColor = color[today]
 #assemble the url string with the color and my github id
 urlString = "https://ghchart.rshah.org/" + todaysColor +"/jonnycross10"
 
-#update the map picture
-print(urlString)
+#make a javascript file and give it the correct url to give to html
+f = open("mapMake.js", "w")
+f.write("var urlString = \"" + urlString +"\";\ndocument.getElementById('map').src = urlString;")
+f.close()
