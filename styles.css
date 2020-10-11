@@ -3,3 +3,29 @@
 	height: 20;
 	width: auto;
 }
+
+.card {
+	height: 100px;
+    width: 150px;
+    min-width: 250px;
+    padding: 1.5rem;
+    border-radius: 16px;
+    background: #17141d;
+    box-shadow: -1rem 0 3rem #000;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+    margin: 0;
+    scroll-snap-align: start;
+    clear: both;
+    position: absolute;
+  	bottom: 8px;
+  	left: 16px;
+}
+
+.card:hover{
+	transform: translateY(-75px);
+}
+.card-header{
+	color: white;
+}
