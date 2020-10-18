@@ -1,30 +1,39 @@
-#this program will be responsible for selecting the website's background
+#http://www.7timer.info/bin/astro.php?lon=38&lat=121&ac=0&unit=metric&output=json&tzshift=0
 import requests
 import json
-from secrets import lat,lon
+from secrets import lat,lon 
 import socket
-from ipgeo import ipgeo #pip install ipgeo
-from PIL import Image #pip install pillow
+from ipgeo import ipgeo
+from PIL import Image
+from datetime import datetime
+
+
+info = ipgeo.query('182.138.127.93')
+#print(info.latitude)
 
 hostname = socket.gethostname()
 ip_address = socket.gethostbyname(hostname)
 print(ip_address)
 
 
+
+
+#lat = "38.81"
+#lon = "-121.27"
 urlString = "http://www.7timer.info/bin/api.pl?lon=" + lon + "&lat=" + lat + "&product=civil&output=json"
 
+# "http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=civil&output=json"
+
+
+#r = requests.get("http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=civil&output=json")
 
 r = requests.get(urlString)
 
-#put the weather info into a dict and print out today
+#print(r.text)
 x = {}
 x = json.loads(r.text)
 print(x['dataseries'][0]['weather'])
 
-#open image in folder and save it as background image in current file
-im = Image.open("imgs\saturday.jpg")
-im.save("background.jpg", "JPEG")
+im = Image.open("imgs/" + str(datetime.today().weekday()) + ".jpg")
 
-#later i will select the picture based on the day of the week
-#after that I will add pictures to be selected depending on 
-#the weather and time of day as well
+im.save("todaysImg.jpg")
