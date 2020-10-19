@@ -4,14 +4,17 @@
 }
 
 .card-list {
-	position: relative;
+	position: fixed;
 	bottom: 50px;
 	left: 5px;
-    padding: 3rem;
+    padding: 10rem;
     height: 300px;
 
 }
 
+.searchbar {
+	float: right;
+}
 
 .card {
 	box-shadow: -1rem 0 2.2rem #123;
