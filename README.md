@@ -9,3 +9,6 @@ use your school's canvas url
 Put them in the double quotes in the secrets file
 
 # Run the make.py
+
+
+Code demo here: https://www.youtube.com/watch?v=sBptbgUNUmk
